@@ -1,3 +1,11 @@
 #result {
   display: none;
 }
+
+h1 {
+  text-decoration: underline;
+}
+
+#numbers {
+  text-decoration: underline;
+}
