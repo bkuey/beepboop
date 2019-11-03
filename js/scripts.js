@@ -1,28 +1,32 @@
 $(document).ready(function() {
-  $(".mainForm").submit(function(event) {
-    var input = parseInt($("#input").val());
-    $("#result").append("<p>[" + beepBoop(input) + "]<p>");
+  $("#mainForm").submit(function(event) {
+    event.preventDefault();
 
-  event.preventDefault();
+    var userInput = parseInt($("#input").val());
+    var finalResult = output(userInput);
+    $("#result").show();
+
+    $("<li>" + finalResult + "</li>").appendTo("#result");
+
+    $("#result").last().click(function() {
+    $("#result").empty();
+    });
   });
 });
 
-function beepBoop(input) {
-  var array = [];
-  var beep = "Beep!";
-  var boop = "Boop!";
-  var sowwy = "I'm sorry Dave" + "I'm afraid I can't do that.";
-    for (var i = 0; i <= input; i++) {
-      userString = input.toString();
-      if (i % 3 === 0 && i > 0) {
-        array.push(sowwy);
-      } else if (userString.includes("1")) {
-        array.push(boop);
-      } else if (userString.includes("0")) {
-        array.push(beep);
-      } else {
-        array.push(i.toString());
-        }
-      }
-      return array;
+function output(input) {
+  var results = [];
+
+  for (var i = 0; i <= input; i++) {
+    if (i.toString().includes("1")) {
+      results.push(" Beep!");
+    } else if (i.toString().includes("2")) {
+      results.push(" Boop!");
+    } else if (i.toString().includes("3")) {
+      results.push("I'm sorry Dave. I'm afraid I can't do that.")
+    } else {
+      results.push(' ' + i);
+    }
   }
+  return results;
+}
