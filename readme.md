@@ -8,6 +8,15 @@
 
 _{This webpage will respond to numbers as Beep!, Boop! or a sentence. The project uses knowledge that I learned in class from wk 3 which are Arrays and Loops.}_
 
+### Specs
+| Behavior | Input | Output |
+| :-------------     | :------------- | :------------- |
+| it can count up to the provided number | 2 | 1, 2 |
+| to does not count anything that's not a number | p | error |
+| places a value equal to a specific result | 0 | "Beep!" |
+| it returns a message to numbers divisible by three | 6 | "I'm sorry Dave. I'm afraid I can't do that!" |
+
+
 ## Setup/Installation Requirements
 
 * _Read instructions given by Instructor_
